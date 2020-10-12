@@ -1,0 +1,7 @@
+terraform.tfstate*
+.terraform.tfstate.lock.info
+tfplan
+.terraform
+.vscode/
+.DS_Store
+kubeconfig_eks-wordpress
