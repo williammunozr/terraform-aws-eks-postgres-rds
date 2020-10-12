@@ -31,12 +31,11 @@ It is required to be proficient with AWS. You must create a IAM User with the ne
 
 We need to create the following secrets values:
 
-- aws secretsmanager create-secret --name 'DB_ENDPOINT' --secret-string 'terraform-eks-01.ckz23kltqu6m.us-east-2.rds.amazonaws.com' --tags 'Key=jenkins:credentials:type,Value=string' --description 'Database Endpoint'
-- aws secretsmanager create-secret --name 'AWS_ACCOUNT_ID' --secret-string '342288875929' --tags 'Key=jenkins:credentials:type,Value=string' --description 'AWS Account Id'
-- aws secretsmanager create-secret --name 'DB_NAME' --secret-string 'timeoffdb' --tags 'Key=jenkins:credentials:type,Value=string' --description 'Database Name'
-- aws secretsmanager create-secret --name 'DB_USERNAME' --secret-string 'timeoffuser' --tags 'Key=jenkins:credentials:type,Value=string' --description 'Database Username'
-- aws secretsmanager create-secret --name 'DB_PASSWD' --secret-string 'Cool7*Quickly*Learning' --tags 'Key=jenkins:credentials:type,Value=string' --description 'Database Password'
-- aws secretsmanager create-secret --name 'DB_DIALECT' --secret-string 'mysql' --tags 'Key=jenkins:credentials:type,Value=string' --description 'Database Dialect'
+- aws secretsmanager create-secret --name 'AWS_ACCOUNT_ID' --secret-string 'YOUR_AWS_ACCOUNT_ID' --tags 'Key=jenkins:credentials:type,Value=string' --description 'AWS Account Id'
+- aws secretsmanager create-secret --name 'DB_NAME' --secret-string 'YOUR_DB_NAME' --tags 'Key=jenkins:credentials:type,Value=string' --description 'Database Name'
+- aws secretsmanager create-secret --name 'DB_USERNAME' --secret-string 'YOUR_DB_USERNAME' --tags 'Key=jenkins:credentials:type,Value=string' --description 'Database Username'
+- aws secretsmanager create-secret --name 'DB_PASSWD' --secret-string 'YOUR_DB_PASSWORD' --tags 'Key=jenkins:credentials:type,Value=string' --description 'Database Password'
+- aws secretsmanager create-secret --name 'DB_DIALECT_CODIMD' --secret-string 'postgres' --tags 'Key=jenkins:credentials:type,Value=string' --description 'Database Dialect'
 
 We need the tags `Key=jenkins:credentials:type,Value=string` because in the application deployment, we are going to use that tag to recover the secrets during the pipeline.
 
@@ -85,7 +84,7 @@ If you don't want to implement Slack notifications, don't create the variable an
 
 In the following link we implement a CI/CD for an application that use this infrastructure. 
 
-- [Timeoff Management Application](https://github.com/williammunozr/timeoff-management-application)
+- [CodiMD](https://github.com/williammunozr/codimd)
 
 ## Resources
 
