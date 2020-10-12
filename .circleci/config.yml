@@ -111,7 +111,7 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - main
       - terraform-destroy:
           requires:
             - hold-for-approval
