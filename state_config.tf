@@ -6,7 +6,7 @@
 terraform { 
     backend "s3" {
         bucket          = "terraform.hachiko.app"
-        key             = "terraform-aws-eks/state"
+        key             = "terraform-aws-eks-postgres/state"
         region          = "us-east-1"
         dynamodb_table  = "terraform-state-01"
         encrypt         = true

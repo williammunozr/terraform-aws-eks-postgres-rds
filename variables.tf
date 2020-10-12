@@ -157,7 +157,7 @@ variable "rds_database_identifier" {
 }
 
 variable "rds_port" {
-  default = "3306"
+  default = "5432"
 }
 
 variable "rds_storage_type" {
@@ -169,11 +169,11 @@ variable "rds_allocated_storage" {
 }
 
 variable "rds_engine" {
-  default = "mysql"
+  default = "postgres"
 }
 
 variable "rds_engine_version" {
-  default = "5.7.19"
+  default = "9.6.9"
 }
 
 variable "rds_instance_class" {
@@ -181,7 +181,7 @@ variable "rds_instance_class" {
 }
 
 variable "rds_parameter_family" {
-  default = "mysql5.7"
+  default = "postgres9.6"
 }
 
 variable "enable_dashboard" {
@@ -189,6 +189,6 @@ variable "enable_dashboard" {
 }
 
 variable "rds_major_engine_version" {
-  default = "5.7"
+  default = "9.6"
 }
 
