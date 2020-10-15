@@ -6,3 +6,4 @@ tfplan
 .DS_Store
 kubeconfig_eks-wordpress
 .idea
+venv
