@@ -105,6 +105,11 @@ workflows:
           type: approval
           requires:
             - terraform-plan
+          filters:
+            branches:
+              only:
+                - main
+                - destroy
       - terraform-apply:
           requires:
             - hold-for-approval
