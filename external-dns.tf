@@ -3,6 +3,7 @@
     Develop By: William MR
 */
 
+/*
 locals {
   oidc_url = replace(module.eks-cluster.cluster_oidc_issuer_url, "https://", "")
 }
@@ -169,3 +170,4 @@ resource "helm_release" "external_dns" {
     value = lookup(var.region, var.environment)
   }
 }
+*/
