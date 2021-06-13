@@ -38,6 +38,7 @@ aws secretsmanager create-secret --name 'DB_NAME' --secret-string 'YOUR_DB_NAME'
 aws secretsmanager create-secret --name 'DB_USERNAME' --secret-string 'YOUR_DB_USERNAME' --tags 'Key=jenkins:credentials:type,Value=string' --description 'Database Username'
 aws secretsmanager create-secret --name 'DB_PASSWD' --secret-string 'YOUR_DB_PASSWORD' --tags 'Key=jenkins:credentials:type,Value=string' --description 'Database Password'
 aws secretsmanager create-secret --name 'DB_DIALECT_CODIMD' --secret-string 'postgres' --tags 'Key=jenkins:credentials:type,Value=string' --description 'Database Dialect'
+aws secretsmanager create-secret --name 'DB_ENDPOINT' --secret-string 'dummy' --tags 'Key=jenkins:credentials:type,Value=string' --description 'Database Endpoint'
 ```
 
 #### Without Jenkins Tags
@@ -48,6 +49,7 @@ aws secretsmanager create-secret --name 'DB_NAME' --secret-string 'codimd' --des
 aws secretsmanager create-secret --name 'DB_USERNAME' --secret-string 'codimdadmin' --description 'Database Username' --profile cloud-nation-production
 aws secretsmanager create-secret --name 'DB_PASSWD' --secret-string 'A1s2d3f4' --description 'Database Password' --profile cloud-nation-production
 aws secretsmanager create-secret --name 'DB_DIALECT_CODIMD' --secret-string 'postgres' --description 'Database Dialect' --profile cloud-nation-production
+aws secretsmanager create-secret --name 'DB_ENDPOINT' --secret-string 'dummy' --description 'Database Endpoint' --profile cloud-nation-production
 ```
 
 We need the tags `Key=jenkins:credentials:type,Value=string` because in the application deployment, we are going to use that tag to recover the secrets during the pipeline.
