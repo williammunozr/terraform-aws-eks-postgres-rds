@@ -99,13 +99,13 @@ variable "eks_cluster_name" {
 
 variable "eks_cluster_version" {
     description     = "EKS Cluster Version"
-    default         = "1.17"
+    default         = "1.20"
 }
 
 variable "external_dns_chart_version" {
   description = "External-dns Helm chart version to deploy. 3.0.0 is the minimum version for this function"
   type        = string
-  default     = "3.0.0"
+  default     = "3.0.0" #ToDo
 }
 
 variable "external_dns_chart_log_level" {
@@ -123,7 +123,7 @@ variable "external_dns_zoneType" {
 variable "external_dns_domain_filters" {
   description   = "External-dns Domain filters."
   type          = list(string)
-  default       = ["cloud-station.io"]
+  default       = ["cloud-nation.net"]
 }
 
 variable "oidc_thumbprint_list" {
