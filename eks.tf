@@ -7,7 +7,7 @@ module "eks-cluster" {
     version                   = "17.1.0"
     cluster_name        = var.eks_cluster_name
     cluster_version     = var.eks_cluster_version
-    subnets             = module.vpc.public_subnets
+    subnets             = module.vpc.private_subnets
     vpc_id              = module.vpc.vpc_id
 
     worker_groups       = [
