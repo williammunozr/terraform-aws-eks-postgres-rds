@@ -3,6 +3,7 @@
 
 Following the instructions described in this project you will be able to deploy an AWS EKS cluster with some add-ons.
 
+
 # Architecture
 
 ![alt text](images/Architecture.png "Architecture Proposal")
