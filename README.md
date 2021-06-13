@@ -32,11 +32,23 @@ It is required to be proficient with AWS. You must create a IAM User with the ne
 
 We need to create the following secrets values:
 
-- aws secretsmanager create-secret --name 'AWS_ACCOUNT_ID' --secret-string 'YOUR_AWS_ACCOUNT_ID' --tags 'Key=jenkins:credentials:type,Value=string' --description 'AWS Account Id'
-- aws secretsmanager create-secret --name 'DB_NAME' --secret-string 'YOUR_DB_NAME' --tags 'Key=jenkins:credentials:type,Value=string' --description 'Database Name'
-- aws secretsmanager create-secret --name 'DB_USERNAME' --secret-string 'YOUR_DB_USERNAME' --tags 'Key=jenkins:credentials:type,Value=string' --description 'Database Username'
-- aws secretsmanager create-secret --name 'DB_PASSWD' --secret-string 'YOUR_DB_PASSWORD' --tags 'Key=jenkins:credentials:type,Value=string' --description 'Database Password'
-- aws secretsmanager create-secret --name 'DB_DIALECT_CODIMD' --secret-string 'postgres' --tags 'Key=jenkins:credentials:type,Value=string' --description 'Database Dialect'
+```
+aws secretsmanager create-secret --name 'AWS_ACCOUNT_ID' --secret-string 'YOUR_AWS_ACCOUNT_ID' --tags 'Key=jenkins:credentials:type,Value=string' --description 'AWS Account Id'
+aws secretsmanager create-secret --name 'DB_NAME' --secret-string 'YOUR_DB_NAME' --tags 'Key=jenkins:credentials:type,Value=string' --description 'Database Name'
+aws secretsmanager create-secret --name 'DB_USERNAME' --secret-string 'YOUR_DB_USERNAME' --tags 'Key=jenkins:credentials:type,Value=string' --description 'Database Username'
+aws secretsmanager create-secret --name 'DB_PASSWD' --secret-string 'YOUR_DB_PASSWORD' --tags 'Key=jenkins:credentials:type,Value=string' --description 'Database Password'
+aws secretsmanager create-secret --name 'DB_DIALECT_CODIMD' --secret-string 'postgres' --tags 'Key=jenkins:credentials:type,Value=string' --description 'Database Dialect'
+```
+
+#### Without Jenkins Tags
+
+```
+aws secretsmanager create-secret --name 'AWS_ACCOUNT_ID' --secret-string 'YOUR_AWS_ACCOUNT_ID' --description 'AWS Account Id' --profile cloud-nation-production
+aws secretsmanager create-secret --name 'DB_NAME' --secret-string 'codimd' --description 'Database Name' --profile cloud-nation-production
+aws secretsmanager create-secret --name 'DB_USERNAME' --secret-string 'codimdadmin' --description 'Database Username' --profile cloud-nation-production
+aws secretsmanager create-secret --name 'DB_PASSWD' --secret-string 'A1s2d3f4' --description 'Database Password' --profile cloud-nation-production
+aws secretsmanager create-secret --name 'DB_DIALECT_CODIMD' --secret-string 'postgres' --description 'Database Dialect' --profile cloud-nation-production
+```
 
 We need the tags `Key=jenkins:credentials:type,Value=string` because in the application deployment, we are going to use that tag to recover the secrets during the pipeline.
 
