@@ -5,7 +5,7 @@
 
 resource "kubernetes_service" "rds" {
   metadata {
-    name = "timeoff-database"
+    name = "codimddb"
   }
 
   spec {
