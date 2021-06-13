@@ -3,6 +3,7 @@
   Develop By: William MR
 */
 
+/*
 resource "kubernetes_service_account" "gitlab" {
   metadata {
     name        = "gitlab"
@@ -30,3 +31,4 @@ resource "kubernetes_role_binding" "gitlab" {
     namespace = "kube-system"
   }
 }
+*/
